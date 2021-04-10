@@ -18,7 +18,7 @@
   <meta name="author" content="Kevin Zhu">
   <meta name="keywords" content="">
   
-  <title>二叉树的镜像 - 千百度阑珊处</title>
+  <title>从上往下打印二叉树 - 千百度阑珊处</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="二叉树的镜像">
+            <span class="h2" id="subtitle" title="从上往下打印二叉树">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-10 00:17" pubdate>
-        2021年4月10日 凌晨
+      <time datetime="2021-04-10 22:55" pubdate>
+        2021年4月10日 晚上
       </time>
     </span>
   
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      194 字
+      320 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      4
        分钟
     </span>
   
@@ -237,20 +237,17 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">二叉树的镜像</h1>
+            <h1 style="display: none">从上往下打印二叉树</h1>
             
             <div class="markdown-body">
-              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs livescript">比如：    源二叉树 <br>            <span class="hljs-number">8</span><br>           /  <span class="hljs-string">\</span><br>          <span class="hljs-number">6</span>   <span class="hljs-number">10</span><br>         / <span class="hljs-string">\</span>  / <span class="hljs-string">\</span><br>        <span class="hljs-number">5</span>  <span class="hljs-number">7</span> <span class="hljs-number">9</span> <span class="hljs-number">11</span><br>        镜像二叉树<br>            <span class="hljs-number">8</span><br>           /  <span class="hljs-string">\</span><br>          <span class="hljs-number">10</span>   <span class="hljs-number">6</span><br>         / <span class="hljs-string">\</span>  / <span class="hljs-string">\</span><br>        <span class="hljs-number">11</span> <span class="hljs-number">9</span> <span class="hljs-number">7</span>  <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则返回true,否则返回false。假设输入的数组的任意两个数字都互不相同。（ps：我们约定空树不是二叉搜素树）示例1</p>
+<p>输入</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">[<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">12</span>,<span class="hljs-number">16</span>,<span class="hljs-number">14</span>,<span class="hljs-number">10</span>]<br></code></pre></td></tr></table></figure>
 
-<p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clojure">&#123;<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">10</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>,<span class="hljs-number">11</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>返回值</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clojure">&#123;<span class="hljs-number">8</span>,<span class="hljs-number">10</span>,<span class="hljs-number">6</span>,<span class="hljs-number">11</span>,<span class="hljs-number">9</span>,<span class="hljs-number">7</span>,<span class="hljs-number">5</span>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *   int val = 0;</span><br><span class="hljs-comment"> *   TreeNode left = null;</span><br><span class="hljs-comment"> *   TreeNode right = null;</span><br><span class="hljs-comment"> *   public TreeNode(int val) &#123;</span><br><span class="hljs-comment"> *     this.val = val;</span><br><span class="hljs-comment"> *   &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * </span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> pRoot TreeNode类 </span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> TreeNode类</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">Mirror</span> <span class="hljs-params">(TreeNode pRoot)</span> </span>&#123;<br>        <span class="hljs-comment">// 递归，参考前序遍历二叉树</span><br>        <span class="hljs-keyword">if</span>(pRoot != <span class="hljs-keyword">null</span>) &#123;<br>            TreeNode node = pRoot.left;<br>            pRoot.left = pRoot.right;<br>            pRoot.right = node;<br>            Mirror(pRoot.left);<br>            Mirror(pRoot.right);<br>        &#125;<br>        <span class="hljs-keyword">return</span> pRoot;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">VerifySquenceOfBST</span><span class="hljs-params">(<span class="hljs-keyword">int</span> [] sequence)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(sequence == <span class="hljs-keyword">null</span> || sequence.length == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> isBST(sequence, <span class="hljs-number">0</span>, sequence.length - <span class="hljs-number">1</span>);<br>    &#125;<br>    <br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 根据平衡二叉树的特性，root的左子树的值，都小于root的值，root的右子树的值，都大于root的值</span><br><span class="hljs-comment">     **/</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isBST</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] sequeue, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end)</span> </span>&#123;<br>        <span class="hljs-comment">// 如果start 大于等于 end，则说明是单个节点，或者区间为空</span><br>        <span class="hljs-keyword">if</span>(start &gt;= end) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>        <span class="hljs-comment">// 获取根节点</span><br>        <span class="hljs-keyword">int</span> root = sequeue[end];<br>        <span class="hljs-comment">// 获取左子树</span><br>        <span class="hljs-keyword">int</span> split = start;<br>        <span class="hljs-keyword">for</span>(; sequeue[split]&lt;root; split++);<br>        <br>        <span class="hljs-comment">// 判断split后面的值，是否都大于root，如果不是都大于root，则说明不是BST</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = split; i &lt; end; i++) &#123;<br>            <span class="hljs-keyword">if</span>(sequeue[i] &lt; root) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 由于在获取split的时候，最后做了一次++操作，所以此处需要split-1</span><br>        <span class="hljs-comment">// end-1是去掉root节点</span><br>        <span class="hljs-keyword">return</span> isBST(sequeue, start, split - <span class="hljs-number">1</span>) &amp;&amp; isBST(sequeue, split, end - <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -288,9 +285,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/10/algorithm/0020-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/">
+                      <a href="/2021/04/11/algorithm/0025-%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%92%8C%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">顺时针打印矩阵</span>
+                        <span class="hidden-mobile">二叉树中和为某一值的路径</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -298,8 +295,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/09/algorithm/0018-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/">
-                        <span class="hidden-mobile">树的子结构</span>
+                      <a href="/2021/04/10/algorithm/0023-%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="hidden-mobile">从上往下打印二叉树</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

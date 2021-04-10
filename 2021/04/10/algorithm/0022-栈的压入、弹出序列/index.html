@@ -18,7 +18,7 @@
   <meta name="author" content="Kevin Zhu">
   <meta name="keywords" content="">
   
-  <title>二叉树的镜像 - 千百度阑珊处</title>
+  <title>栈的压入、弹出序列 - 千百度阑珊处</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="二叉树的镜像">
+            <span class="h2" id="subtitle" title="栈的压入、弹出序列">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-10 00:17" pubdate>
-        2021年4月10日 凌晨
+      <time datetime="2021-04-10 21:30" pubdate>
+        2021年4月10日 晚上
       </time>
     </span>
   
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      194 字
+      600 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      8
        分钟
     </span>
   
@@ -237,18 +237,32 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">二叉树的镜像</h1>
+            <h1 style="display: none">栈的压入、弹出序列</h1>
             
             <div class="markdown-body">
-              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs livescript">比如：    源二叉树 <br>            <span class="hljs-number">8</span><br>           /  <span class="hljs-string">\</span><br>          <span class="hljs-number">6</span>   <span class="hljs-number">10</span><br>         / <span class="hljs-string">\</span>  / <span class="hljs-string">\</span><br>        <span class="hljs-number">5</span>  <span class="hljs-number">7</span> <span class="hljs-number">9</span> <span class="hljs-number">11</span><br>        镜像二叉树<br>            <span class="hljs-number">8</span><br>           /  <span class="hljs-string">\</span><br>          <span class="hljs-number">10</span>   <span class="hljs-number">6</span><br>         / <span class="hljs-string">\</span>  / <span class="hljs-string">\</span><br>        <span class="hljs-number">11</span> <span class="hljs-number">9</span> <span class="hljs-number">7</span>  <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</p>
+<h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h3><p>输入</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-string">[1,2,3,4,5]</span>,<span class="hljs-string">[4,3,5,1,2]</span><br></code></pre></td></tr></table></figure>
 
-<p>示例1</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clojure">&#123;<span class="hljs-number">8</span>,<span class="hljs-number">6</span>,<span class="hljs-number">10</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>,<span class="hljs-number">11</span>&#125;<br></code></pre></td></tr></table></figure>
+<p>返回值</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript"><span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clojure">&#123;<span class="hljs-number">8</span>,<span class="hljs-number">10</span>,<span class="hljs-number">6</span>,<span class="hljs-number">11</span>,<span class="hljs-number">9</span>,<span class="hljs-number">7</span>,<span class="hljs-number">5</span>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="方案一：自己的傻逼思路"><a href="#方案一：自己的傻逼思路" class="headerlink" title="方案一：自己的傻逼思路"></a>方案一：自己的傻逼思路</h3><ol>
+<li>如果 pushA 和 popA 对应的元素相同，则 pushA 和 popA 继续向后遍历，不入栈</li>
+<li>如果不相同，则获取data栈的值，和popA比较<ol>
+<li>如果相等，则将data出栈，popA继续向后遍历</li>
+<li>如果不相等，则将pushA的元素入栈data，popA 继续停留在当前位置</li>
+</ol>
+</li>
+<li>如果pushA遍历完了，开始将 data 出栈，出栈元素和 popA继续比较</li>
+<li>出栈过程中，如果出现不相等，则说明popA不是弹出顺序，如果data栈可以遍历完成，则说明是弹出顺序</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">IsPopOrder</span><span class="hljs-params">(<span class="hljs-keyword">int</span> [] pushA,<span class="hljs-keyword">int</span> [] popA)</span> </span>&#123;<br>        <span class="hljs-comment">// 模拟入栈操作</span><br>        Stack&lt;Integer&gt; data = <span class="hljs-keyword">new</span> Stack&lt;&gt;();<br>        <span class="hljs-keyword">int</span> p = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; pushA.length; i++) &#123;<br>            <span class="hljs-keyword">if</span>(pushA[i] == popA[p]) &#123;<br>                p++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">while</span>(!data.isEmpty() &amp;&amp; data.peek() == popA[p]) &#123;<br>                    data.pop();<br>                    p++;<br>                &#125;<br>                data.push(pushA[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(!data.isEmpty()) &#123;<br>            <span class="hljs-keyword">if</span>(data.pop() == popA[p]) &#123;<br>                p++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *   int val = 0;</span><br><span class="hljs-comment"> *   TreeNode left = null;</span><br><span class="hljs-comment"> *   TreeNode right = null;</span><br><span class="hljs-comment"> *   public TreeNode(int val) &#123;</span><br><span class="hljs-comment"> *     this.val = val;</span><br><span class="hljs-comment"> *   &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * </span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> pRoot TreeNode类 </span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> TreeNode类</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">Mirror</span> <span class="hljs-params">(TreeNode pRoot)</span> </span>&#123;<br>        <span class="hljs-comment">// 递归，参考前序遍历二叉树</span><br>        <span class="hljs-keyword">if</span>(pRoot != <span class="hljs-keyword">null</span>) &#123;<br>            TreeNode node = pRoot.left;<br>            pRoot.left = pRoot.right;<br>            pRoot.right = node;<br>            Mirror(pRoot.left);<br>            Mirror(pRoot.right);<br>        &#125;<br>        <span class="hljs-keyword">return</span> pRoot;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="方案二：看题解"><a href="#方案二：看题解" class="headerlink" title="方案二：看题解"></a>方案二：看题解</h3><ol>
+<li>新建一个栈，将数组A压入栈中，当栈顶元素等于数组B时，就将其出栈，当循环结束时，判断栈是否为空，若为空则返回true。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Stack;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 1. 如果栈元素全部出了，最小值应该为0</span><br><span class="hljs-comment"> * 2. 如果栈中最小的出了，后面的最小值应该是之前的第二小值</span><br><span class="hljs-comment"> **/</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br><br>    Stack&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();<br>    <br>    Stack&lt;Integer&gt; min = <span class="hljs-keyword">new</span> Stack&lt;&gt;();<br>        <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-keyword">int</span> node)</span> </span>&#123;<br>        stack.push(node);<br>        <span class="hljs-keyword">if</span>(min.isEmpty()) &#123;<br>            min.push(node);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// min 中放入 min的栈顶和要入栈数的最小值</span><br>            min.push(Math.min(node, min.peek()));<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span> </span>&#123;<br>        stack.pop();<br>        min.pop();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">top</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> stack.peek();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">min</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> min.peek();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
             </div>
@@ -267,11 +281,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">二叉树</a>
-                    
                       <a class="hover-with-bg" href="/tags/%E7%89%9B%E5%AE%A2%E7%BD%91/">牛客网</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%80%92%E5%BD%92/">递归</a>
+                      <a class="hover-with-bg" href="/tags/%E6%A0%88/">栈</a>
                     
                   </div>
                 
@@ -288,9 +300,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/10/algorithm/0020-%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/">
+                      <a href="/2021/04/10/algorithm/0023-%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">顺时针打印矩阵</span>
+                        <span class="hidden-mobile">从上往下打印二叉树</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -298,8 +310,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/09/algorithm/0018-%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/">
-                        <span class="hidden-mobile">树的子结构</span>
+                      <a href="/2021/04/10/algorithm/0021-%E5%8C%85%E5%90%ABmin%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/">
+                        <span class="hidden-mobile">包含min函数的栈</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
